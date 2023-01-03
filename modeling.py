@@ -26,9 +26,7 @@ from model import naive_bayes, svm, random_forest, adaboost_classifier, ensemble
 # Reporting
 from reporting_acceleration_data import *
 
-#  !!!!CHANGE TO ALLOW DATASET INPUT!
-# Location of dataset
-#PATH = "./prepped_prepped_meh100.csv"
+
 
 def retrieve_arguments():
     parser = argparse.ArgumentParser(
@@ -146,7 +144,7 @@ def main(args):
     configuration_name = create_configuration_name(args.model, args.oversample, args.window_size, args.classes_of_interest)
     confusion_matrix = create_confusion_matrix(y_test, y_pred, classes)
     save_results(confusion_matrix, report, accurate_behavior_list, configuration_name)
-    create_key_file(classes, args.data_output_file)
+    create_key_file(accurate_behavior_list, args.data_output_file)
 
 
 if __name__ == "__main__":
