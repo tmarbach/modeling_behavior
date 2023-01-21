@@ -53,7 +53,7 @@ def retrieve_arguments():
     parser.add_argument(
             "-o",
             "--oversample",
-            help = "Flag to oversample the minority classes: o -- oversample, s -- SMOTE, or a -- ADASYN ",
+            help = "Flag to oversample the minority classes: o -- oversample, u -- undersample, s -- SMOTE, or a -- ADASYN ",
             default='ns', 
             type=str)
     parser.add_argument( 

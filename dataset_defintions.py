@@ -64,9 +64,12 @@ NO_SAMPLING = "No_Sampling"
 SMOTE = "SMOTE"
 ADASYN = "ADASYN"
 RANDOM_OVERSAMPLE = "Random_Over_Sampler"
+RANDOM_UNDERSAMPLE = "Random_Under_Sampler"
+
 
 SAMPLING_TECHNIQUE_NAMES = {
     "o": RANDOM_OVERSAMPLE,
+    "u": RANDOM_UNDERSAMPLE,
     "s" : SMOTE,
     "a" : ADASYN,
     'ns' : NO_SAMPLING,

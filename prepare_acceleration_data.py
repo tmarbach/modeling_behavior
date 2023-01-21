@@ -6,6 +6,8 @@ Function for preparing a cleaned acceleration dataframe for training and testing
 
 from sklearn.model_selection import StratifiedShuffleSplit
 from imblearn.over_sampling import RandomOverSampler, SMOTE, ADASYN
+from imblearn.under_sampling import RandomUnderSampler
+
 
 def reduce_sample_dimension(X_data):
     """
@@ -60,6 +62,8 @@ def apply_sampling(X_data, y_data, sample_flag):
         X_resampled, y_resampled = SMOTE(k_neighbors=2).fit_resample(X_data, y_data)
     elif sample_flag == 'a':
         X_resampled, y_resampled = ADASYN(n_neighbors=2).fit_resample(X_data, y_data)
+    elif sample_flag == 'u':
+        X_resampled, y_resampled = RandomUnderSampler(random_state=0).fit_resample(X_data, y_data)
     else:
         # If no sample flag has been specified or the flag is not recognized,
         # do not apply a sampling technique
