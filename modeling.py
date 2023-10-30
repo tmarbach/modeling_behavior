@@ -111,10 +111,10 @@ def prepare_train_test_pipeline(windowed_X_data, y_data, sample_flag=None):
     """
     desc
         Pipeline created to prepare windowed data, apply sampling techniques and
-        split into test and train. 
+        split into test and train datasets. 
     params
         windowed_X_data - X data that has had a windowing technique applied
-        y_data          - ground truth
+        y_data          - ground truth classes
         sample_flag     - sampling technique to be applied
     return
         x_train_resampled - re-portioned X data from the sampling technique selected
